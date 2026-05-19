@@ -7,13 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+   <LinearLayout
+       android:id="@+id/topBar"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:background="@color/black"
+       android:weightSum="3"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent">
+
+       <ImageView
+           android:id="@+id/topBarMenu"
+           android:layout_width="24dp"
+           android:layout_height="24dp"
+           android:layout_margin="10dp"
+           android:src="@drawable/ic_menu"
+           app:tint="@color/white" />
+
+       <TextView
+           android:id="@+id/title"
+           android:layout_width="wrap_content"
+           android:layout_weight="3"
+           android:layout_height="wrap_content"
+           android:text="Syria Booking"
+           android:gravity="center"
+           android:layout_gravity="center"
+           android:layout_margin="10dp"
+           android:textStyle="bold"
+           android:textColor="#98ff98"
+           android:textSize="17sp"/>
+
+       <ImageView
+           android:id="@+id/topBarDots"
+           android:layout_width="24dp"
+           android:layout_height="24dp"
+           android:src="@drawable/ic_dots"
+           app:tint="@color/white"
+           android:layout_margin="10dp"
+           />
+
+
+   </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:menu="@menu/bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
