@@ -13,10 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/img_frame"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/hotelImage"
                 android:layout_width="match_parent"
@@ -34,9 +30,6 @@
                 android:padding="2dp"
                 android:layout_margin="15dp"
                 android:backgroundTint="@color/white"/>
-
-        </FrameLayout>
-
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -87,7 +80,7 @@
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             android:layout_marginTop="-10dp"
-            android:layout_below="@+id/img_frame"
+            android:layout_below="@+id/hotelImage"
             app:strokeWidth="0dp">
 
             <LinearLayout
@@ -96,16 +89,11 @@
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
 
                 <TextView
-
                     android:id="@+id/hotelname"
-                    android:layout_width="0dp"
-                    android:height="40dp"
+                    android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_marginTop="5dp"
                     android:maxLines="2"
@@ -115,10 +103,10 @@
                     android:text="Royal Hotel"
                     android:textStyle="bold"/>
 
-            </LinearLayout>
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/hotelLocation"
                     android:text="Bengaluru"

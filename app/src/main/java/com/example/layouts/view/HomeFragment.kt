@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.layouts.R
 import com.example.layouts.databinding.FragmentHomeBinding
@@ -45,10 +46,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeHotels() {
-        viewModel.HotelList.observe(
+        viewModel.hotelList.observe(
             viewLifecycleOwner
         ) {
-            adapter = HotelAdapter(it)
+            adapter = HotelAdapter(it){
+                findNavController().navigate(
+                    R.id.detailFragment
+                )
+            }
             binding?.recycleView?.adapter = adapter
         }
     }

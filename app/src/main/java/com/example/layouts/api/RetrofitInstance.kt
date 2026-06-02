@@ -8,9 +8,7 @@ object RetrofitInstance {
 
         Retrofit.Builder()
             .baseUrl("https://syriabookingstage.azurewebsites.net/")
-            .addConverterFactory(
-                GsonConverterFactory.create()
-            )
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
     }

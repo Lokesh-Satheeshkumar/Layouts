@@ -12,16 +12,13 @@ class HotelViewModel : ViewModel(){
 
     private val repo = HotelRepository()
 
-    val HotelList = MutableLiveData<List<Data>>()
+    private var _hotelList = MutableLiveData<List<Data>>()
+    val hotelList = MutableLiveData<List<Data>>()
 
     fun fetchHotels() {
         viewModelScope.launch {
-            try {
-                HotelList.value = repo.getHotels()
-            }catch (e: Exception) {
-                e.printStackTrace()
-            }
-
+                _hotelList.value = repo.getHotels()
+                hotelList.value = _hotelList.value
         }
     }
 }
